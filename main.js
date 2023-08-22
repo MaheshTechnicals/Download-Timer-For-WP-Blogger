@@ -17,7 +17,7 @@ let Timer = async () => {
 
     }
     else {
-      div.innerHTML = `Please Wai<span>${time}</span>Seconds`
+      div.innerHTML = `Please Wait<span>${time}</span>Seconds`
 
     }
 
