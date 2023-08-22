@@ -3,9 +3,32 @@ let button = document.querySelector(".Download")
 let time = 15;
 
 
-let div = document.createElement("div")
-div.innerHTML = `Please Wait...<span>${time}</span> Seconds`
+let Timer = async () => {
+  button.style.display = "none"
+  let div = await document.createElement("div")
+  div.classList = await "timerDiv"
 
-button.style.display = "none"
-div.classList = "timerDiv"
-button.parentNode.appendChild(div)
+  let interval = setInterval(() => {
+    time--
+    if (time < 0) {
+      clearInterval(interval)
+      document.querySelector(".timerDiv").remove()
+      button.style.display = ""
+
+    }
+    else {
+      div.innerHTML = `Please Wai<span>${time}</span>Seconds`
+
+    }
+
+
+  }, 1000)
+
+
+  await button.parentNode.appendChild(div)
+
+}
+
+
+
+Timer()
